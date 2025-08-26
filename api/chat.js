@@ -21,7 +21,8 @@ export default async function handler(req, res) {
       ],
     });
 
-    res.status(200).json({ reply: response.choices[0].message.content });
+    // 🔹 Ahora devolvemos "respuesta" en lugar de "reply"
+    res.status(200).json({ respuesta: response.choices[0].message.content });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
